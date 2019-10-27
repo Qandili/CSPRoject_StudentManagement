@@ -84,7 +84,7 @@ namespace Project
         private void button1_Click(object sender, EventArgs e)
         {
             Filiere fil;
-
+            String newfiliere="z";
             if (dataGridView1.SelectedCells.Count > 0)
             {
                 int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
@@ -92,7 +92,15 @@ namespace Project
                 DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
 
                 //string nom_filiere = Convert.ToString(selectedRow.Cells["nom_filiere"].Value);
-                string nom_filiere = Convert.ToString(filiere_name.Text);
+                using (updateFiliere update = new updateFiliere(Convert.ToString(selectedRow.Cells["nom_filiere"].Value)))
+                {
+                    if (update.ShowDialog() == DialogResult.OK)
+                    {
+                        newfiliere = update.text;
+                    }
+                }
+                string nom_filiere = (newfiliere);
+                message.Text = newfiliere;
                 int id_filiere = Convert.ToInt32(selectedRow.Cells["id_filiere"].Value);
                 fil= new Filiere(id_filiere,nom_filiere);
      
@@ -106,7 +114,6 @@ namespace Project
                 dataGridView1.Update();
                 dataGridView1.Refresh();
             }
-
 
         }
 

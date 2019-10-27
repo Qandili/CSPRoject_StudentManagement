@@ -36,6 +36,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Messaging" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -67,6 +68,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resource1.resx</DependentUpon>
     </Compile>
+    <Compile Include="updateFiliere.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="updateFiliere.Designer.cs">
+      <DependentUpon>updateFiliere.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -83,6 +90,9 @@
     <EmbeddedResource Include="Resource1.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="updateFiliere.resx">
+      <DependentUpon>updateFiliere.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="ClassLinq.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
@@ -111,6 +121,7 @@
   <ItemGroup>
     <Content Include="resources\images\delete.png" />
     <Content Include="resources\images\edit.png" />
+    <Content Include="resources\images\flasks.png" />
     <Content Include="resources\images\plus.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -9,3 +9,4 @@ C:\Users\mohamed\source\repos\Project\Project\obj\Debug\Project.exe
 C:\Users\mohamed\source\repos\Project\Project\obj\Debug\Project.pdb
 C:\Users\mohamed\source\repos\Project\Project\obj\Debug\Project.Resource1.resources
 C:\Users\mohamed\source\repos\Project\Project\obj\Debug\Project.csprojAssemblyReference.cache
+C:\Users\mohamed\source\repos\Project\Project\obj\Debug\Project.updateFiliere.resources

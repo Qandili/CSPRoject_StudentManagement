@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.filiere_name = new System.Windows.Forms.TextBox();
             this.Etudiant = new System.Windows.Forms.TabPage();
+            this.button3 = new System.Windows.Forms.Button();
             this.tab.SuspendLayout();
             this.filiere.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -57,6 +58,8 @@
             // 
             // filiere
             // 
+            this.filiere.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.filiere.Controls.Add(this.button3);
             this.filiere.Controls.Add(this.button2);
             this.filiere.Controls.Add(this.button1);
             this.filiere.Controls.Add(this.dataGridView1);
@@ -67,7 +70,6 @@
             this.filiere.Size = new System.Drawing.Size(768, 400);
             this.filiere.TabIndex = 0;
             this.filiere.Text = "Filiere";
-            this.filiere.UseVisualStyleBackColor = true;
             this.filiere.Click += new System.EventHandler(this.filiere_Click);
             // 
             // button2
@@ -159,10 +161,22 @@
             this.Etudiant.Text = "Etudiant";
             this.Etudiant.UseVisualStyleBackColor = true;
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.button3.Enabled = false;
+            this.button3.Image = global::Project.Properties.Resources.flasks;
+            this.button3.Location = new System.Drawing.Point(15, 24);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(58, 51);
+            this.button3.TabIndex = 7;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSlateGray;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.tab);
             this.Name = "Form1";
@@ -190,6 +204,7 @@
         private System.Windows.Forms.Label message;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button3;
     }
 }
 
