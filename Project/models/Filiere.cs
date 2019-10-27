@@ -8,16 +8,16 @@ namespace Project.models
 {
     class Filiere
     {
-        private String id;
+        private int id;
         private String nomFiliere;
 
-        public Filiere(string id, string nomFiliere)
+        public Filiere(int id, string nomFiliere)
         {
             this.id = id;
             this.NomFiliere = nomFiliere;
         }
 
-        public string Id { get => id; set => id = value; }
+        public int Id { get => id; set => id = value; }
         public string NomFiliere { get => nomFiliere; set => nomFiliere = value; }
     }
 }

@@ -30,17 +30,19 @@
         {
             this.tab = new System.Windows.Forms.TabControl();
             this.filiere = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.message = new System.Windows.Forms.Label();
             this.Ajouter = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.filiere_name = new System.Windows.Forms.TextBox();
             this.Etudiant = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.message = new System.Windows.Forms.Label();
             this.tab.SuspendLayout();
             this.filiere.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab
@@ -55,6 +57,8 @@
             // 
             // filiere
             // 
+            this.filiere.Controls.Add(this.button2);
+            this.filiere.Controls.Add(this.button1);
             this.filiere.Controls.Add(this.dataGridView1);
             this.filiere.Controls.Add(this.groupBox1);
             this.filiere.Location = new System.Drawing.Point(4, 22);
@@ -65,6 +69,36 @@
             this.filiere.Text = "Filiere";
             this.filiere.UseVisualStyleBackColor = true;
             this.filiere.Click += new System.EventHandler(this.filiere_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(555, 259);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "supprimer";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(454, 259);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "modifier";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(430, 87);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
             // groupBox1
             // 
@@ -78,6 +112,15 @@
             this.groupBox1.TabIndex = 3;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "AJouter une filiere";
+            // 
+            // message
+            // 
+            this.message.AutoSize = true;
+            this.message.ForeColor = System.Drawing.Color.Red;
+            this.message.Location = new System.Drawing.Point(86, 63);
+            this.message.Name = "message";
+            this.message.Size = new System.Drawing.Size(0, 13);
+            this.message.TabIndex = 5;
             // 
             // Ajouter
             // 
@@ -116,24 +159,6 @@
             this.Etudiant.Text = "Etudiant";
             this.Etudiant.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(430, 87);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
-            this.dataGridView1.TabIndex = 4;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // message
-            // 
-            this.message.AutoSize = true;
-            this.message.ForeColor = System.Drawing.Color.Red;
-            this.message.Location = new System.Drawing.Point(86, 63);
-            this.message.Name = "message";
-            this.message.Size = new System.Drawing.Size(0, 13);
-            this.message.TabIndex = 5;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -145,9 +170,9 @@
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tab.ResumeLayout(false);
             this.filiere.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -163,6 +188,8 @@
         private System.Windows.Forms.TextBox filiere_name;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label message;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
 
