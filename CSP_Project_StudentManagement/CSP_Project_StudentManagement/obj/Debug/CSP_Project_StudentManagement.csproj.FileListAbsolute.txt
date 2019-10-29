@@ -1,0 +1,12 @@
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\bin\Debug\CSP_Project_StudentManagement.exe.config
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\bin\Debug\CSP_Project_StudentManagement.exe
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\bin\Debug\CSP_Project_StudentManagement.pdb
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\obj\Debug\CSP_Project_StudentManagement.EtudiantCustomControl.resources
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\obj\Debug\CSP_Project_StudentManagement.FilieresCustomControl.resources
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\obj\Debug\CSP_Project_StudentManagement.FirstCustomControl.resources
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\obj\Debug\CSP_Project_StudentManagement.Form1.resources
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\obj\Debug\CSP_Project_StudentManagement.Properties.Resources.resources
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\obj\Debug\CSP_Project_StudentManagement.updateFiliere.resources
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\obj\Debug\CSP_Project_StudentManagement.csproj.GenerateResource.Cache
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\obj\Debug\CSP_Project_StudentManagement.exe
+c:\Users\~fakefaker~\documents\visual studio 2017\Projects\CSP_Project_StudentManagement\CSP_Project_StudentManagement\obj\Debug\CSP_Project_StudentManagement.pdb

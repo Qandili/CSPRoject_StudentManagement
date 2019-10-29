@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="gestion_des_etudiants" Class="ClassLinqDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=(localdb)\ProjectsV13;Initial Catalog=gestion_des_etudiants;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False" SettingsObjectName="Project.Properties.Settings" SettingsPropertyName="gestion_des_etudiantsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.filiere" Member="filiere">
+    <Type Name="filiere">
+      <Column Name="Id_filiere" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom_filiere" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="filiere_Table" Member="Table" ThisKey="Id_filiere" OtherKey="id_filiere" Type="Table" />
+    </Type>
+  </Table>
+  <Table Name="dbo.[Table]" Member="Table">
+    <Type Name="Table">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="cne" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="prenom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="sexe" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="datenaissance" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="adresse" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="telephone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="id_filiere" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="filiere_Table" Member="filiere" ThisKey="id_filiere" OtherKey="Id_filiere" Type="filiere" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

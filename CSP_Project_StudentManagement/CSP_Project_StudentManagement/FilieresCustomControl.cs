@@ -1,0 +1,158 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Drawing;
+using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using CSP_Project_StudentManagement.models;
+
+namespace CSP_Project_StudentManagement
+{
+    public partial class FilieresCustomControl : UserControl
+    {
+        DataTable table;
+        StudentDataClasseDataContext dataContext;
+        public FilieresCustomControl()
+        {
+            InitializeComponent();
+        }
+
+        private void loadData()
+        {
+            //this is a data source whoch contains columns and rows that we will insert in our data grid view
+            //adding columns
+            table = new DataTable();
+            table.Columns.Add("id_filiere", typeof(int));
+            table.Columns.Add("nom_filiere", typeof(string));
+            //fetching data from filiere table using linq commands
+            var x = from c in dataContext.Filieres
+                    select c;
+            // looping on X whoch contains elements selected from database
+            foreach (var i in x)
+            {
+                table.Rows.Add(i.Id_filiere, i.Nom_filiere);
+            }
+            //asigning datatable to the gridview 
+            dataGridView1.DataSource = table;
+        }
+        private void FilieresCustomControl_Load(object sender, EventArgs e)
+        {
+            //here we are instanciating our source of data in other word our database
+            dataContext = new StudentDataClasseDataContext();
+            loadData();
+
+        }
+
+        private void Ajouter_Click(object sender, EventArgs e)
+        {
+            var data = new StudentDataClasseDataContext();
+            var filiere = new Filiere();
+            if (filiere_name.Text.Equals(""))
+            {
+                message.Text = "Invalid input, Veuillez remplir ce champ !";
+            }
+            else
+            {
+                filiere.Nom_filiere = filiere_name.Text;
+                data.Filieres.InsertOnSubmit(filiere);
+                data.SubmitChanges();
+                table.Rows.Add(filiere.Id_filiere, filiere.Nom_filiere);
+            }
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+
+        }
+
+        private void dataGridView1_SelectionChanged(object sender, EventArgs e)
+        {
+            // Update the labels to reflect changes to the selection.
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+
+                string a = Convert.ToString(selectedRow.Cells["nom_filiere"].Value);
+                filiere_name.Text = a;
+
+
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            FiliereModel fil;
+            String newfiliere = "z";
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+
+                //string nom_filiere = Convert.ToString(selectedRow.Cells["nom_filiere"].Value);
+                using (updateFiliere update = new updateFiliere(Convert.ToString(selectedRow.Cells["nom_filiere"].Value)))
+                {
+                    if (update.ShowDialog() == DialogResult.OK)
+                    {
+                        newfiliere = update.text;
+                    }
+                }
+                string nom_filiere = (newfiliere);
+                message.Text = newfiliere;
+                int id_filiere = Convert.ToInt32(selectedRow.Cells["id_filiere"].Value);
+                fil = new FiliereModel(id_filiere, nom_filiere);
+                var x = (from c in dataContext.Filieres
+                         where c.Id_filiere == fil.Id
+                         select c).SingleOrDefault();
+                x.Id_filiere = fil.Id;
+                x.Nom_filiere = fil.NomFiliere;
+                dataContext.SubmitChanges();
+                loadData();
+                dataGridView1.Update();
+                dataGridView1.Refresh();
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            FiliereModel fil;
+            if (dataGridView1.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = dataGridView1.SelectedCells[0].RowIndex;
+
+                DataGridViewRow selectedRow = dataGridView1.Rows[selectedrowindex];
+
+                //string nom_filiere = Convert.ToString(selectedRow.Cells["nom_filiere"].Value);
+                string nom_filiere = Convert.ToString(selectedRow.Cells["id_filiere"].Value);
+                int id_filiere = Convert.ToInt32(selectedRow.Cells["id_filiere"].Value);
+                fil = new FiliereModel(id_filiere, nom_filiere);
+
+                var x = (from c in dataContext.Filieres
+                         where c.Id_filiere == fil.Id
+                         select c).SingleOrDefault();
+                dataContext.Filieres.DeleteOnSubmit(x);
+                dataContext.SubmitChanges();
+                loadData();
+                dataGridView1.Update();
+                dataGridView1.Refresh();
+            }
+        }
+    }
+}
