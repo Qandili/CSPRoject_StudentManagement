@@ -37,5 +37,10 @@ namespace Project
         {
             text = textBox1.Text;
         }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -157,5 +157,25 @@ namespace Project
                 dataGridView1.Refresh();
             }
         }
+        //this func fill the combo box in the etudiant page 
+        private void FillSearchByCneBox1()
+        {
+            //SchoolDbDataContext data = new SchoolDbDataContext();
+            //var x = from c in data.Etudiants select c;
+            //foreach (var i in x)
+            //{
+            //    searchByCneBox1.Items.Add(i.cne);
+            //}
+
+        }
+        private void Etudiant_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
